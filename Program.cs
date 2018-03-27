@@ -51,13 +51,10 @@ namespace console
         {
             Console.WriteLine("Hello World?!");
             var tmpContext = new MyContext();
-            using (tmpContext) {
-                var tmpPessoa = tmpContext.PESSOA;
-                tmpContext.Database.OpenConnection();
-                tmpContext.Database.ExecuteSqlCommand("execute procedure dypedev_force_login2('dype')");
-                tmpPessoa.Add(new PESSOA {NOME="Teste1234"});
-                tmpContext.SaveChanges();
-            }
+            tmpContext.Database.OpenConnection();
+            tmpContext.Database.ExecuteSqlCommand("execute procedure dypedev_force_login2('dype')");
+            tmpContext.PESSOA.Add(new PESSOA {NOME="Teste1234"});
+            tmpContext.SaveChanges();
         }
     }
 }
