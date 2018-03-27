@@ -53,7 +53,7 @@ namespace console
             var tmpContext = new MyContext();
             tmpContext.Database.OpenConnection();
             tmpContext.Database.ExecuteSqlCommand("execute procedure dypedev_force_login2('dype')");
-            tmpContext.PESSOA.Add(new PESSOA {NOME="Teste1234"});
+            tmpContext.PESSOA.Add(new PESSOA {NOME="Teste1234567890"});
             tmpContext.SaveChanges();
         }
     }
